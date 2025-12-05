@@ -1,0 +1,385 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  overflow-x: hidden;
+  background: 
+  #ffffff;
+  color: #333;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 5%;
+  background: white;
+  position:static;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  min-height: 80px;
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #e60000;
+}
+
+.navbar.active {
+  color: #e60000;
+}
+
+active > a {
+  color: #e60000;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  margin-left: 4px;
+  color: #e60000;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #ffe6e6;
+}
+
+.dropdown li a {
+  padding: 14px 18px;
+  display: block;
+  color: #555;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.dropdown li a:hover {
+  background: #fff0f0;
+  color: #e60000;
+}
+
+.nav-links li:hover .dropdown {
+  display: block;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #e60000;
+}
+
+/*SIDEBAR - START*/
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100vh;
+  background: white;
+  z-index: 2000;
+  transition: right 0.4s ease;
+  padding: 2.5rem;
+  box-shadow: -8px 0 25px rgba(0,0,0,0.12);
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #ffe6e6;
+  padding-bottom: 1rem;
+}
+
+.sidebar-logo {
+  height: 60px;
+}
+
+.close-btn {
+  font-size: 2.2rem;
+  cursor: pointer;
+  color: #e60000;
+  font-weight: bold;
+}
+
+.sidebar-links {
+    list-style: none;
+        a {
+    color: #333;
+    font-weight: 600;
+    font-size: 1.15rem;
+    text-decoration: none;
+    }
+}
+
+.sidebar-links a:hover,
+.sidebar-links a.active {
+  color: #e60000;
+}
+
+@media (max-width: 968px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: block;
+  }
+  h1 {
+    font-size: 3.2rem;
+  }
+  .hero-content {
+    left: 5%;
+    right: 5%;
+    text-align: center;
+  }
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 80%;
+    text-align: center;
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 3rem;
+  }
+  .about-title h2 {
+    font-size: 3.2rem;
+  }
+}
+/*SIDEBAR - END*/
+
+.team-pic {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  background-image: url('/images/Gemini_Generated_Image_xygawsxygawsxyga.png'); 
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.pic-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+}
+
+.team-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  padding: 2rem;
+}
+
+.team-content h1 {
+  font-size: 4.5rem;
+  font-weight: 900;
+  margin: 0 0 1.5rem 0;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+  letter-spacing: 1px;
+  font-family: 'Arial Black', sans-serif;
+  text-transform: uppercase;
+}
+
+.title-underline {
+  width: 280px;
+  height: 6px;
+  background: #e60000;
+  margin: 0 auto;
+  border-radius: 3px;
+  box-shadow: 0 4px 10px rgba(253, 183, 183, 0.377);
+}
+
+.team-section {
+  padding: 4rem 5%;
+  background: #fdfbfb;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: white;
+  padding: 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(83, 83, 83, 0.19);
+  border-radius: 2%;
+}
+
+.team-photo {
+  width: 190px;
+  height: 250px;
+  margin: 0 auto 1.2rem;
+  overflow: hidden;
+}
+
+.team-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #222;
+  margin: 0 0 0.4rem 0;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: #e60000;
+  font-weight: 600;
+  margin: 0 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.desc{
+    font-size: 0.9rem;
+    color: rgb(66, 66, 66);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    letter-spacing: 0.5px;
+    text-align: center;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: #f8f8f8;
+  border-radius: 50%;
+  color: #e60000;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-links a:hover {
+  background: #e60000;
+  color: white;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 968px) {
+  .team-pic {
+    height: 40vh;
+    width: 100%;
+    
+    background-attachment: scroll;
+  }
+
+  .team-content h1 {
+    font-size: 2.8rem;
+  }
+
+  .title-underline {
+    width: 120px;
+    height: 5px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.site-footer {
+  background: linear-gradient(90deg, #e60000, #970505);
+  color: #ffffff;
+  text-align: center;
+  padding: 2rem 5%;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.8px;
+  margin-top: 5rem;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: #e60000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.site-footer a:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.8rem 5%;
+    font-size: 0.9rem;
+  }
+}
