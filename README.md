@@ -2,7 +2,7 @@
 
 This repository contains the **remodelled version** of the Optimus Office Solutions website. The goal is to modernize the current site ([https://optimus.co.mw/](https://optimus.co.mw/)) with a cleaner UI, improved responsiveness, and updated service information.
 
-**Live Preview:** [https://optimusofficesolutions.onrender.com/](https://optimusofficesolutions.onrender.com/)
+**Live Preview:** [https://optimusofficesolutions.onrender.com/])[(https://optimusofficesolutions-t3iz.onrender.com))
 
 ---
 
@@ -11,19 +11,6 @@ This repository contains the **remodelled version** of the Optimus Office Soluti
 * Node.js & Express
 * EJS templating
 * HTML / CSS / JavaScript
-
----
-
-## 📁 Project Structure
-
-```
-/
-├── app.js
-├── package.json
-├── views/        # EJS templates
-├── public/       # CSS, JS, images
-└── README.md
-```
 
 ---
 
